@@ -24,7 +24,7 @@ def count_url_access(method):
 
         store.incr(count_key)
         store.set(cached_key, html)
-        store.expire(cached_key, 10)
+        store.setex(cached_key, 10)
         return html
     return wrapper
 
